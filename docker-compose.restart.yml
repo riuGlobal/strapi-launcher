@@ -1,5 +1,7 @@
 version: "3"
 
 services:
-  strapi:
+  strapi-blog:
+    restart: unless-stopped
+  strapi-blog-web:
     restart: unless-stopped
