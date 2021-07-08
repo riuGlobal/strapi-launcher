@@ -1,8 +1,17 @@
 version: "3.8"
 
 services:
-  strapi:
+  strapi-blog:
     build: https://github.com/riuGlobal/strapi-blog.git
-    container_name: strapi
+    container_name: strapi-blog
     volumes:
       - ${PWD}/strapi-data:/strapi-data
+
+  strapi-blog-web:
+    depends_on:
+      - strapi-blog
+    build: https://github.com/riuGlobal/strapi-blog-web.git
+    container_name: strapi-blog-web
+    environment:
+      - NEXT_PUBLIC_STRAPI_API_URL
+
