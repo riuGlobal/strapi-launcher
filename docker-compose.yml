@@ -1,15 +1,8 @@
-version: "3"
+version: "3.8"
 
 services:
   strapi:
-    image: strapi/strapi:3.6.5-alpine
+    build: https://github.com/riuGlobal/strapi-blog.git
     container_name: strapi
-    environment:
-      - DATABASE_CLIENT
-      - DATABASE_NAME
-      - DATABASE_HOST
-      - DATABASE_PORT
-      - DATABASE_USERNAME
-      - DATABASE_PASSWORD
     volumes:
-      - ${PWD}/strapi-data:/srv/app
+      - ${PWD}/strapi-data:/strapi-data
