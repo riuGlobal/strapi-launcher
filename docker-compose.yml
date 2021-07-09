@@ -11,7 +11,7 @@ services:
     depends_on:
       - strapi-blog
     build: https://github.com/riuGlobal/strapi-blog-web.git
-    container_name: ${STRAPI_BLOG__WEB_CONTAINER_NAME:-strapi-blog-web}
+    container_name: ${STRAPI_BLOG_WEB_CONTAINER_NAME:-strapi-blog-web}
     environment:
       - NEXT_PUBLIC_STRAPI_API_URL
 
